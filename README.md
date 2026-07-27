@@ -33,6 +33,103 @@ settings:
 
 Then, in Admin Interface -> Flow & Stages -> Flows -> `default-authentication-flow` -> EDIT BUTTON -> Appearance settings -> Layout -> Choose "Stacked"
 
+After that go to **Flows and Stages → Stages**.
+
+Open **Password Stages**.
+
+Edit the Password stage used by the authentication flow, commonly named something like:
+
+```text
+default-authentication-password
+```
+
+Configure the required password backends, normally at least:
+
+```text
+User database + standard password
+```
+
+Enable **Allow show password**
+
+Save the stage.
+
+Open **Flows and Stages → Stages**.
+
+Open **Identification Stages**.
+
+Edit the Identification stage used at the beginning of the authentication flow, commonly:
+
+```text
+default-authentication-identification
+```
+
+Set **User fields** to:
+
+```text
+Username
+Email
+```
+
+Set **Password stage** to the Password stage configured in the previous section.
+
+Enable:
+
+```text
+Enable remember me on this device
+```
+
+Set **WebAuthn Authenticator Validation stage** to a validation stage that allows WebAuthn devices.
+
+Save the stage.
+
+Open **Flows and Stages → Flows**.
+
+Open the authentication flow used by the Brand.
+
+Open **Stage Bindings**.
+
+Keep the Identification stage as the first normal authentication step.
+
+Remove or disable the separately bound Password stage.
+
+Keep any required Authenticator Validation/MFA stage after identification.
+
+Keep the User Login stage as the final stage.
+
+Open **Flows and Stages → Stages**.
+
+Open **Authenticator Validation Stages**.
+
+Edit an existing validation stage or create a dedicated one.
+
+Ensure **Device classes** includes:
+
+```text
+WebAuthn
+```
+
+use
+
+```text
+WebAuthn user verification: Required
+```
+
+Save the stage.
+
+Return to the Identification stage and select this stage under:
+
+```text
+WebAuthn Authenticator Validation stage
+```
+
+Edit the WebAuthn/FIDO2 authenticator setup stage and configure:
+
+```text
+Resident key requirement: Preferred or Required
+User verification: Required
+Authenticator attachment: Unset / no restriction
+```
+
 Tested on Authentik version 2026.5.6
 
 
