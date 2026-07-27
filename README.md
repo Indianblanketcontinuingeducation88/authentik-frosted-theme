@@ -7,6 +7,8 @@ Please open issues if you find any visual bugs!
 Download theme.css, copy content and paste into 
 Admin Dashboard -> System -> Brands -> Authentik Default OR create a new brand under your domain -> Branding settings -> Custom CSS field
 
+if you also want the earth background shown in the demo pics you can download flow.jpg, upload via Admin Interface -> Customization -> Files, and then set it as your default flow background in Brand settings
+
 then go to your brand, scroll down to Atrributes and paste this:
 
 ```yaml
