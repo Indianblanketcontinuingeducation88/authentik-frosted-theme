@@ -2,6 +2,8 @@
 
 Authentik Frosted Glass Theme
 
+Feel free to open issues if you find any visual bugs!
+
 Download theme.css, copy content and paste into 
 Admin Dashboard -> System -> Brands -> Authentik Default OR create a new brand under your domain -> Branding settings -> Custom CSS field
 
