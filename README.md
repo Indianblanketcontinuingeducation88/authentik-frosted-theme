@@ -78,13 +78,13 @@ Enable:
 Enable remember me on this device
 ```
 
-Set **WebAuthn Authenticator Validation stage** to a validation stage that allows WebAuthn devices.
+Then under Passkey settings on the same page, set **WebAuthn Authenticator Validation stage** to a validation stage that allows WebAuthn devices (default should be `passkey-autofill-validation`)
 
 Save the stage.
 
 Open **Flows and Stages → Flows**.
 
-Open the authentication flow used by the Brand.
+Open (Click on it, not EDIT) the authentication flow used by the Brand (commonly `default-authentication-flow`)
 
 Open **Stage Bindings**.
 
