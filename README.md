@@ -2,6 +2,8 @@
 
 Authentik Frosted Glass Theme
 
+Scroll all the way down for preview pics
+
 Please open issues if you find any visual bugs!
 
 Download theme.css, copy content and paste into 
