@@ -70,7 +70,7 @@ Username
 Email
 ```
 
-Set **Password stage** to the Password stage configured in the previous section.
+Set **Password stage** to the Password stage configured in the previous section (dedefault is `default-authentication-password` unless you changed/customized it)
 
 Enable:
 
